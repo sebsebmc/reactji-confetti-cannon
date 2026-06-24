@@ -2,10 +2,13 @@ let tries = 10;
 let initId = setInterval(init, 500);
 
 function init(){
-    let elem = document.querySelector("#activity > span > div > div");
+    let elem = document.querySelector("#activity-inbox > span > div > div");
     if (elem || tries-- < 1){
         clearInterval(initId);
         console.log(`Stopping interval after ${10-tries} tries`);
+        if(tries < 1) {
+            return;
+        }
     }else{
         return;
     }
